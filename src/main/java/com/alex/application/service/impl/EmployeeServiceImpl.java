@@ -8,13 +8,14 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
     private static final Logger logger = LogManager.getLogger(EmployeeServiceImpl.class);
     @Autowired
-    HibernateTemplate template;
+    private HibernateTemplate template;
     @Override
     public List<Employee> getEmployeeList() {
         logger.info("Getting employee list...");
